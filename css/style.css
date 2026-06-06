@@ -1,0 +1,41 @@
+h1, h2, h3, .font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0d151c;
+  color: #e5e5e5;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(to right, #64b5f6, #1e88e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.modal-overlay {
+  backdrop-filter: blur(8px);
+  background-color: rgba(13, 21, 28, 0.9);
+}
+
+.hero-gradient {
+  background: linear-gradient(to bottom, rgba(13,21,28,0.4) 0%, rgba(13,21,28,1) 100%);
+}
+
+.gallery-slider {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.gallery-slider::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  [dir="rtl"] #lang-switcher {
+    border-left: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    padding-left: 0;
+    padding-right: 1.5rem;
+  }
+}

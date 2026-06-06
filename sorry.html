@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Access Restricted | CHURCHILL</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<script data-purpose="tailwind-config">tailwind.config = {theme: {extend: {colors: {"smoke-black": "#0d151c", "gold-accent": "#64b5f6", "deep-amber": "#1e88e5", charcoal: "#1a2b3c", primary: "#359EFF", "background-light": "#f5f7f8", "background-dark": "#0d151c"}, fontFamily: {serif: ["\"Playfair Display\"", "serif"], sans: ["Inter", "sans-serif"], display: "Font Unspecified"}, borderRadius: {DEFAULT: "0px", lg: "0px", xl: "0px", full: "0px"}}}};</script>
+<link href="css/style.css" rel="stylesheet"/>
+</head>
+<body class="min-h-screen flex items-center justify-center px-6">
+<!-- Language Switcher -->
+<div class="fixed top-6 right-6 flex items-center space-x-2 text-xs font-bold">
+<button class="text-gold-accent" data-lang-btn="en">EN</button>
+<span class="text-gray-600">|</span>
+<button class="text-gray-400 hover:text-white transition-colors" data-lang-btn="pl">PL</button>
+<span class="text-gray-600">|</span>
+<button class="text-gray-400 hover:text-white transition-colors" data-lang-btn="ar">AR</button>
+<span class="text-gray-600">|</span>
+<button class="text-gray-400 hover:text-white transition-colors" data-lang-btn="ru">RU</button>
+</div>
+<div class="bg-charcoal border border-gold-accent p-8 md:p-12 max-w-lg w-full text-center shadow-2xl">
+<h1 class="text-3xl md:text-4xl font-serif text-gold-accent mb-6" data-i18n="sorry.title">We're Sorry</h1>
+<p class="text-gray-300 mb-8 leading-relaxed" data-i18n="sorry.message">This website contains content intended for adults aged 18 and over. Unfortunately, we are unable to grant you access.</p>
+<a class="inline-block border border-gold-accent text-gold-accent hover:bg-gold-accent hover:text-smoke-black py-3 px-10 transition-colors duration-300" data-i18n="sorry.back" href="index.html">
+      Go Back
+    </a>
+</div>
+<script src="locales/en.js"></script>
+<script src="locales/pl.js"></script>
+<script src="locales/ar.js"></script>
+<script src="locales/ru.js"></script>
+<script src="js/i18n.js"></script>
+</body></html>
