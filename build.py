@@ -16,7 +16,9 @@ FOOD_PDF_DEFAULT = 'Food%20Menu%20eng.pdf'
 
 
 def switcher(current, page):
-    """Language links. page='' -> sibling index (../en/); page='gallery.html'."""
+    """Language links, e.g. page='index.html' or page='gallery.html'.
+    Always link to an explicit file (not a bare ../en/ directory) so it works
+    on file:// and hosts that don't auto-serve a directory index."""
     out = []
     for i, l in enumerate(LANGS):
         href = '../{}/{}'.format(l, page)
@@ -50,7 +52,7 @@ def gallery_items():
                 src = '../photos/{}/{}'.format(c, lists[c][i])
                 out.append(
                     '<button class="gitem" data-cat="{c}" data-src="{s}">'
-                    '<img loading="lazy" src="{s}" alt="{a} at Churchill Lounge"/></button>'.format(
+                    '<img loading="lazy" src="{s}" alt="{a} at Churchill\'s Lounge"/></button>'.format(
                         c=c, s=src, a=labels[c]))
         i += 1
     return '\n'.join(out)
@@ -75,7 +77,7 @@ def main():
                       .replace('%%LANG%%', lang)
                       .replace('%%DIR%%', direction)
                       .replace('%%FOODPDF%%', food)
-                      .replace('%%SWITCHER%%', switcher(lang, '')))
+                      .replace('%%SWITCHER%%', switcher(lang, 'index.html')))
         with open(os.path.join(d, 'index.html'), 'w', encoding='utf-8') as f:
             f.write(index_html)
 

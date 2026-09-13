@@ -67,7 +67,7 @@ window.translations.ru = {
   'contact.message_placeholder': 'Сообщение',
   'contact.send': 'Отправить отзыв',
 
-  'footer.copyright': '© 2026 CHURCHILL. Все права защищены.',
+  'footer.copyright': '© 2026 CHURCHILL\'S. Все права защищены.',
   'footer.notice': 'Употребляйте ответственно. Курение в помещении разрешено только в специально отведённых зонах.',
 
   'age_gate.title': 'Подтверждение возраста',

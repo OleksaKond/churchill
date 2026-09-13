@@ -67,7 +67,7 @@ window.translations.en = {
   'contact.message_placeholder': 'Message',
   'contact.send': 'Send Feedback',
 
-  'footer.copyright': '© 2026 CHURCHILL. All Rights Reserved.',
+  'footer.copyright': '© 2026 CHURCHILL\'S. All Rights Reserved.',
   'footer.notice': 'Enjoy responsibly. Indoor smoking allowed only in designated areas.',
 
   'age_gate.title': 'Age Verification',

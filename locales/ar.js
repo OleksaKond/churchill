@@ -67,7 +67,7 @@ window.translations.ar = {
   'contact.message_placeholder': 'الرسالة',
   'contact.send': 'إرسال الملاحظات',
 
-  'footer.copyright': '© 2026 تشرشل. جميع الحقوق محفوظة.',
+  'footer.copyright': '© 2026 تشرشلز. جميع الحقوق محفوظة.',
   'footer.notice': 'يرجى الاستمتاع بمسؤولية. التدخين الداخلي مسموح فقط في المناطق المخصصة لذلك.',
 
   'age_gate.title': 'التحقق من العمر',

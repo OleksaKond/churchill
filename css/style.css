@@ -4,23 +4,23 @@ h1, h2, h3, .font-serif {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #0d151c;
+  background-color: #16100b;
   color: #e5e5e5;
 }
 
 .text-gold-gradient {
-  background: linear-gradient(to right, #64b5f6, #1e88e5);
+  background: linear-gradient(to right, #f9a94c, #f17922);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .modal-overlay {
   backdrop-filter: blur(8px);
-  background-color: rgba(13, 21, 28, 0.9);
+  background-color: rgba(22, 16, 11, 0.9);
 }
 
 .hero-gradient {
-  background: linear-gradient(to bottom, rgba(13,21,28,0.4) 0%, rgba(13,21,28,1) 100%);
+  background: linear-gradient(to bottom, rgba(22,16,11,0.4) 0%, rgba(22,16,11,1) 100%);
 }
 
 .gallery-slider {
@@ -57,7 +57,7 @@ body {
   margin: 0 0 1rem;
   padding: 0;
   border: none;
-  background: #1a2b3c;
+  background: #241a13;
   overflow: hidden;
   cursor: zoom-in;
   break-inside: avoid;
@@ -73,9 +73,9 @@ body {
 
 .filter-btn { transition: color 0.2s, border-color 0.2s, background-color 0.2s; }
 .filter-btn.is-active {
-  background-color: #64b5f6;
-  color: #0d151c;
-  border-color: #64b5f6;
+  background-color: #f17922;
+  color: #16100b;
+  border-color: #f17922;
 }
 
 /* Lightbox */
@@ -86,7 +86,7 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
-  background: rgba(13, 21, 28, 0.95);
+  background: rgba(22, 16, 11, 0.95);
   backdrop-filter: blur(6px);
 }
 #lightbox.is-open { display: flex; }
@@ -105,14 +105,24 @@ body {
   justify-content: flex-end;
   min-height: 260px;
   padding: 1.75rem;
-  background: #0d151c;
+  background: #16100b;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 .menu-card:hover {
-  border-color: #64b5f6;
+  border-color: #f17922;
   transform: translateY(-4px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* Hero logo halo: soft blurred + darkened circular backdrop so the
+   white logo stays legible over the photo, with feathered edges. */
+.hero-logo-halo {
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  background: radial-gradient(circle, rgba(22, 16, 11, 0.42) 20%, rgba(22, 16, 11, 0) 82%);
+  -webkit-mask-image: radial-gradient(circle, #000 18%, transparent 85%);
+  mask-image: radial-gradient(circle, #000 18%, transparent 85%);
 }
 
 /* Reveal-on-scroll */
@@ -147,14 +157,14 @@ body {
   width: 4rem;
   height: 4rem;
   margin: 0 auto 1.25rem;
-  border: 1px solid rgba(100, 181, 246, 0.4);
+  border: 1px solid rgba(241, 121, 34, 0.4);
   border-radius: 9999px;
-  color: #64b5f6;
+  color: #f17922;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 .offer-item:hover .offer-icon {
-  background-color: #64b5f6;
-  color: #0d151c;
+  background-color: #f17922;
+  color: #16100b;
 }
 
 /* Quote band */

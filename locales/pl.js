@@ -67,7 +67,7 @@ window.translations.pl = {
   'contact.message_placeholder': 'Wiadomość',
   'contact.send': 'Wyślij opinię',
 
-  'footer.copyright': '© 2026 CHURCHILL. Wszelkie prawa zastrzeżone.',
+  'footer.copyright': '© 2026 CHURCHILL\'S. Wszelkie prawa zastrzeżone.',
   'footer.notice': 'Spożywaj odpowiedzialnie. Palenie w pomieszczeniach dozwolone tylko w wyznaczonych strefach.',
 
   'age_gate.title': 'Weryfikacja wieku',
