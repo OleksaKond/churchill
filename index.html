@@ -7,16 +7,12 @@
 <script>
 (function () {
   var supported = ['en', 'pl', 'ar', 'ru'];
-  var def = 'pl';
-  var lang = null;
+  // Default to Polish; only honor a language the visitor explicitly chose before.
+  var lang = 'pl';
   try {
     var stored = localStorage.getItem('churchill-lang');
     if (supported.indexOf(stored) >= 0) lang = stored;
   } catch (e) {}
-  if (!lang) {
-    var n = (navigator.language || '').slice(0, 2).toLowerCase();
-    lang = supported.indexOf(n) >= 0 ? n : def;
-  }
   location.replace(lang + '/index.html');
 })();
 </script>
