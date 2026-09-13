@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery | Churchill Lounge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<script data-purpose="tailwind-config">tailwind.config = {theme: {extend: {colors: {"smoke-black": "#0d151c", "gold-accent": "#64b5f6", "deep-amber": "#1e88e5", charcoal: "#1a2b3c", primary: "#359EFF", "background-light": "#f5f7f8", "background-dark": "#0d151c"}, fontFamily: {serif: ["\"Playfair Display\"", "serif"], sans: ["Inter", "sans-serif"], display: "Font Unspecified"}, borderRadius: {DEFAULT: "0px", lg: "0px", xl: "0px", full: "0px"}}}};</script>
+<link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body class="overflow-x-hidden">
+<!-- BEGIN: MainHeader -->
+<header class="fixed w-full z-50 bg-smoke-black/80 backdrop-blur-md border-b border-white/10" data-purpose="site-navigation">
+<nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+<a class="text-2xl font-serif font-bold tracking-widest text-gold-accent uppercase" href="index.html">CHURCHILL</a>
+<div class="hidden md:flex items-center space-x-8 text-sm uppercase tracking-widest font-semibold">
+<a class="hover:text-gold-accent transition-colors" href="index.html#hero" data-i18n="nav.home">Home</a>
+<a class="hover:text-gold-accent transition-colors" href="index.html#menu" data-i18n="nav.menu">Menu</a>
+<a class="hover:text-gold-accent transition-colors" href="index.html#reservation" data-i18n="nav.reservations">Reservations</a>
+<a class="hover:text-gold-accent transition-colors" href="index.html#contact" data-i18n="nav.contact">Contact</a>
+<a class="text-gold-accent" href="gallery.html" data-i18n="nav.gallery">Gallery</a></div>
+<div class="flex items-center gap-3">
+<div class="hidden md:flex items-center space-x-1.5 text-xs font-bold md:border-l md:border-white/20 md:pl-6" id="lang-switcher"><a class="text-gray-400 hover:text-white transition-colors" href="../en/gallery.html">EN</a>
+<span class="text-gray-600">|</span>
+<a class="text-gray-400 hover:text-white transition-colors" href="../pl/gallery.html">PL</a>
+<span class="text-gray-600">|</span>
+<a class="text-gray-400 hover:text-white transition-colors" href="../ar/gallery.html">AR</a>
+<span class="text-gray-600">|</span>
+<span class="text-gold-accent">RU</span></div>
+<button class="md:hidden text-white hover:text-gold-accent transition-colors" id="hamburger-btn">
+<svg class="h-6 w-6" fill="none" id="icon-open" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+<svg class="h-6 w-6 hidden" fill="none" id="icon-close" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+</button>
+</div>
+</nav>
+<div class="hidden md:hidden border-t border-white/10 bg-smoke-black" id="mobile-menu">
+<div class="container mx-auto px-6 py-3 flex flex-col text-sm uppercase tracking-widest font-semibold">
+<a class="py-3 border-b border-white/5 hover:text-gold-accent transition-colors" data-i18n="nav.home" href="index.html#hero">Home</a>
+<a class="py-3 border-b border-white/5 hover:text-gold-accent transition-colors" data-i18n="nav.menu" href="index.html#menu">Menu</a>
+<a class="py-3 border-b border-white/5 hover:text-gold-accent transition-colors" data-i18n="nav.reservations" href="index.html#reservation">Reservations</a>
+<a class="py-3 border-b border-white/5 hover:text-gold-accent transition-colors" data-i18n="nav.contact" href="index.html#contact">Contact</a>
+<a class="py-3 border-b border-white/5 text-gold-accent" data-i18n="nav.gallery" href="gallery.html">Gallery</a>
+<div class="py-3 flex items-center space-x-3 text-xs font-bold text-gray-400"><a class="text-gray-400 hover:text-white transition-colors" href="../en/gallery.html">EN</a>
+<span class="text-gray-600">|</span>
+<a class="text-gray-400 hover:text-white transition-colors" href="../pl/gallery.html">PL</a>
+<span class="text-gray-600">|</span>
+<a class="text-gray-400 hover:text-white transition-colors" href="../ar/gallery.html">AR</a>
+<span class="text-gray-600">|</span>
+<span class="text-gold-accent">RU</span></div>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<main class="pt-28 pb-24 bg-charcoal min-h-screen">
+<div class="container mx-auto px-6">
+<div class="text-center mb-10">
+<h1 class="text-4xl md:text-5xl font-serif text-gold-accent mb-4" data-i18n="gallery.title">The Atmosphere</h1>
+<div class="w-24 h-1 bg-gold-accent mx-auto mb-6"></div>
+<p class="text-gray-400 max-w-2xl mx-auto font-light" data-i18n="gallery.subtitle">A glimpse into our lounge — cigars, shisha, signature drinks and cuisine.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-3 mb-12 text-xs md:text-sm uppercase tracking-widest font-semibold" id="gallery-filters">
+<button class="filter-btn is-active px-5 py-2 border border-gold-accent" data-filter="all" data-i18n="gallery.filter_all">All</button>
+<button class="filter-btn px-5 py-2 border border-white/20 text-gray-300" data-filter="cigars" data-i18n="gallery.filter_cigars">Cigars &amp; Lounge</button>
+<button class="filter-btn px-5 py-2 border border-white/20 text-gray-300" data-filter="food" data-i18n="gallery.filter_food">Food</button>
+<button class="filter-btn px-5 py-2 border border-white/20 text-gray-300" data-filter="drinks" data-i18n="gallery.filter_drinks">Drinks</button>
+<button class="filter-btn px-5 py-2 border border-white/20 text-gray-300" data-filter="shisha" data-i18n="gallery.filter_shisha">Shisha</button>
+</div>
+<div class="gallery-grid" id="gallery-grid">
+<button class="gitem" data-cat="shisha" data-src="../photos/shisha/photo_2026-09-13_14-45-03.jpg"><img loading="lazy" src="../photos/shisha/photo_2026-09-13_14-45-03.jpg" alt="Shisha at Churchill Lounge"/></button>
+<button class="gitem" data-cat="drinks" data-src="../photos/drinks/photo_1_2026-09-13_14-42-41.jpg"><img loading="lazy" src="../photos/drinks/photo_1_2026-09-13_14-42-41.jpg" alt="Drinks at Churchill Lounge"/></button>
+<button class="gitem" data-cat="food" data-src="../photos/food/photo_1_2026-09-13_14-43-17.jpg"><img loading="lazy" src="../photos/food/photo_1_2026-09-13_14-43-17.jpg" alt="Food at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_1_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_1_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="drinks" data-src="../photos/drinks/photo_2_2026-09-13_14-42-41.jpg"><img loading="lazy" src="../photos/drinks/photo_2_2026-09-13_14-42-41.jpg" alt="Drinks at Churchill Lounge"/></button>
+<button class="gitem" data-cat="food" data-src="../photos/food/photo_2_2026-09-13_14-43-17.jpg"><img loading="lazy" src="../photos/food/photo_2_2026-09-13_14-43-17.jpg" alt="Food at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_2_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_2_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="drinks" data-src="../photos/drinks/photo_3_2026-09-13_14-42-41.jpg"><img loading="lazy" src="../photos/drinks/photo_3_2026-09-13_14-42-41.jpg" alt="Drinks at Churchill Lounge"/></button>
+<button class="gitem" data-cat="food" data-src="../photos/food/photo_3_2026-09-13_14-43-17.jpg"><img loading="lazy" src="../photos/food/photo_3_2026-09-13_14-43-17.jpg" alt="Food at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_3_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_3_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="drinks" data-src="../photos/drinks/photo_4_2026-09-13_14-42-41.jpg"><img loading="lazy" src="../photos/drinks/photo_4_2026-09-13_14-42-41.jpg" alt="Drinks at Churchill Lounge"/></button>
+<button class="gitem" data-cat="food" data-src="../photos/food/photo_4_2026-09-13_14-43-17.jpg"><img loading="lazy" src="../photos/food/photo_4_2026-09-13_14-43-17.jpg" alt="Food at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_4_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_4_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="drinks" data-src="../photos/drinks/photo_5_2026-09-13_14-42-41.jpg"><img loading="lazy" src="../photos/drinks/photo_5_2026-09-13_14-42-41.jpg" alt="Drinks at Churchill Lounge"/></button>
+<button class="gitem" data-cat="food" data-src="../photos/food/photo_5_2026-09-13_14-43-17.jpg"><img loading="lazy" src="../photos/food/photo_5_2026-09-13_14-43-17.jpg" alt="Food at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_5_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_5_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="drinks" data-src="../photos/drinks/photo_6_2026-09-13_14-42-41.jpg"><img loading="lazy" src="../photos/drinks/photo_6_2026-09-13_14-42-41.jpg" alt="Drinks at Churchill Lounge"/></button>
+<button class="gitem" data-cat="food" data-src="../photos/food/photo_6_2026-09-13_14-43-17.jpg"><img loading="lazy" src="../photos/food/photo_6_2026-09-13_14-43-17.jpg" alt="Food at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_6_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_6_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="drinks" data-src="../photos/drinks/photo_7_2026-09-13_14-42-41.jpg"><img loading="lazy" src="../photos/drinks/photo_7_2026-09-13_14-42-41.jpg" alt="Drinks at Churchill Lounge"/></button>
+<button class="gitem" data-cat="food" data-src="../photos/food/photo_7_2026-09-13_14-43-17.jpg"><img loading="lazy" src="../photos/food/photo_7_2026-09-13_14-43-17.jpg" alt="Food at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_7_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_7_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="food" data-src="../photos/food/photo_8_2026-09-13_14-43-17.jpg"><img loading="lazy" src="../photos/food/photo_8_2026-09-13_14-43-17.jpg" alt="Food at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_8_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_8_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="food" data-src="../photos/food/photo_9_2026-09-13_14-43-17.jpg"><img loading="lazy" src="../photos/food/photo_9_2026-09-13_14-43-17.jpg" alt="Food at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_9_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_9_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="food" data-src="../photos/food/photo_10_2026-09-13_14-43-17.jpg"><img loading="lazy" src="../photos/food/photo_10_2026-09-13_14-43-17.jpg" alt="Food at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_10_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_10_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="food" data-src="../photos/food/photo_11_2026-09-13_14-43-17.jpg"><img loading="lazy" src="../photos/food/photo_11_2026-09-13_14-43-17.jpg" alt="Food at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_11_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_11_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="food" data-src="../photos/food/photo_12_2026-09-13_14-43-17.jpg"><img loading="lazy" src="../photos/food/photo_12_2026-09-13_14-43-17.jpg" alt="Food at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_12_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_12_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="food" data-src="../photos/food/photo_13_2026-09-13_14-43-17.jpg"><img loading="lazy" src="../photos/food/photo_13_2026-09-13_14-43-17.jpg" alt="Food at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_13_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_13_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="food" data-src="../photos/food/photo_14_2026-09-13_14-43-17.jpg"><img loading="lazy" src="../photos/food/photo_14_2026-09-13_14-43-17.jpg" alt="Food at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_14_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_14_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="food" data-src="../photos/food/photo_15_2026-09-13_14-43-17.jpg"><img loading="lazy" src="../photos/food/photo_15_2026-09-13_14-43-17.jpg" alt="Food at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_15_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_15_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_16_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_16_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_17_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_17_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_18_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_18_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_19_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_19_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_20_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_20_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_21_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_21_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_22_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_22_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_23_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_23_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_24_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_24_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_25_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_25_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_26_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_26_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_27_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_27_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_28_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_28_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_29_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_29_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_30_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_30_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_31_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_31_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_32_2026-09-13_14-44-20.jpg"><img loading="lazy" src="../photos/cigars/photo_32_2026-09-13_14-44-20.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_33_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_33_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_34_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_34_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_35_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_35_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_36_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_36_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_37_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_37_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_38_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_38_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_39_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_39_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_40_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_40_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_41_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_41_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_42_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_42_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_43_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_43_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_44_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_44_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_45_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_45_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_46_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_46_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_47_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_47_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_48_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_48_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_49_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_49_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_50_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_50_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_51_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_51_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+<button class="gitem" data-cat="cigars" data-src="../photos/cigars/photo_52_2026-09-13_14-44-21.jpg"><img loading="lazy" src="../photos/cigars/photo_52_2026-09-13_14-44-21.jpg" alt="Cigars & Lounge at Churchill Lounge"/></button>
+</div>
+</div>
+</main>
+<!-- Lightbox -->
+<div id="lightbox" aria-hidden="true">
+<button id="lb-close" aria-label="Close" class="absolute top-5 right-6 text-white/80 hover:text-gold-accent text-4xl leading-none">&times;</button>
+<button id="lb-prev" aria-label="Previous" class="absolute left-4 md:left-8 text-white/70 hover:text-gold-accent text-5xl leading-none select-none">&#8249;</button>
+<img id="lb-img" src="" alt=""/>
+<button id="lb-next" aria-label="Next" class="absolute right-4 md:right-8 text-white/70 hover:text-gold-accent text-5xl leading-none select-none">&#8250;</button>
+</div>
+<!-- BEGIN: MainFooter -->
+<footer class="py-12 border-t border-white/5 bg-background-dark" data-purpose="footer-content">
+<div class="container mx-auto px-6 flex flex-col items-center">
+<a class="text-3xl font-serif font-bold text-gold-accent mb-8 uppercase tracking-tighter" href="index.html">CHURCHILL</a>
+<p class="text-xs text-gray-600 uppercase tracking-widest text-center">
+<span data-i18n="footer.copyright">© 2026 CHURCHILL. All Rights Reserved.</span> <br/>
+<span class="mt-2 block italic" data-i18n="footer.notice">Enjoy responsibly. Indoor smoking allowed only in designated areas.</span>
+</p>
+</div>
+</footer>
+<!-- END: MainFooter -->
+<script src="../locales/en.js"></script>
+<script src="../locales/pl.js"></script>
+<script src="../locales/ar.js"></script>
+<script src="../locales/ru.js"></script>
+<script src="../js/i18n.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/gallery.js"></script>
+</body></html>

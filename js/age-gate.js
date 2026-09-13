@@ -29,7 +29,7 @@
           localStorage.setItem(STORAGE_KEY, 'true');
           setGateVisible(gate, false);
         } else {
-          window.location.href = 'sorry.html';
+          window.location.href = '../sorry.html?lang=' + (document.documentElement.lang || 'pl');
         }
       });
     });

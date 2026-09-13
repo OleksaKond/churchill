@@ -2,15 +2,21 @@
   const STORAGE_KEY = 'churchill-lang';
   const RTL_LANGS = ['ar'];
   const SUPPORTED = ['en', 'pl', 'ar', 'ru'];
+  const DEFAULT = 'pl';
 
-  function getStoredLang() {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    return SUPPORTED.includes(stored) ? stored : 'en';
+  // Language is pinned per page via <html lang="..">, with an optional
+  // ?lang= override (used by sorry.html). No live toggling: the language
+  // switcher is a set of links to the per-language URLs (/en/, /pl/, ...).
+  function resolveLang() {
+    const q = new URLSearchParams(location.search).get('lang');
+    if (SUPPORTED.includes(q)) return q;
+    const htmlLang = document.documentElement.lang;
+    if (SUPPORTED.includes(htmlLang)) return htmlLang;
+    return DEFAULT;
   }
 
-  function applyTranslations(lang) {
+  function apply(lang) {
     const dict = (window.translations && window.translations[lang]) || {};
-
     document.documentElement.lang = lang;
     document.documentElement.dir = RTL_LANGS.includes(lang) ? 'rtl' : 'ltr';
 
@@ -26,24 +32,9 @@
       const key = el.getAttribute('data-i18n-alt');
       if (dict[key] !== undefined) el.alt = dict[key];
     });
-
-    document.querySelectorAll('[data-lang-btn]').forEach(btn => {
-      const isActive = btn.getAttribute('data-lang-btn') === lang;
-      btn.classList.toggle('text-gold-accent', isActive);
-      btn.classList.toggle('text-gray-400', !isActive);
-    });
   }
 
-  function setLang(lang) {
-    if (!SUPPORTED.includes(lang)) return;
-    localStorage.setItem(STORAGE_KEY, lang);
-    applyTranslations(lang);
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('[data-lang-btn]').forEach(btn => {
-      btn.addEventListener('click', () => setLang(btn.getAttribute('data-lang-btn')));
-    });
-    applyTranslations(getStoredLang());
-  });
+  const lang = resolveLang();
+  try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+  document.addEventListener('DOMContentLoaded', () => apply(lang));
 })();

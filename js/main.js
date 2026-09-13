@@ -1,12 +1,14 @@
+// Smooth-scroll for same-page anchor links (href="#...").
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (!target) return;
     e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
+    target.scrollIntoView({ behavior: 'smooth' });
   });
 });
 
+// Mobile navigation toggle.
 (function () {
   const btn = document.getElementById('hamburger-btn');
   const menu = document.getElementById('mobile-menu');
@@ -27,4 +29,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       iconClose.classList.add('hidden');
     });
   });
+})();
+
+// Reveal-on-scroll animations for elements marked with .reveal.
+(function () {
+  const els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(el => io.observe(el));
 })();
