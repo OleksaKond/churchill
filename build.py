@@ -6,6 +6,8 @@ then run `python build.py` to regenerate all language directories.
 """
 import os
 import re
+import glob
+import hashlib
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 LANGS = ['en', 'pl', 'ar', 'ru']
@@ -13,6 +15,28 @@ RTL = {'ar'}
 # Polish gets the Polish food menu; every other language gets English.
 FOOD_PDF = {'pl': 'Food%20Menu%20pol.pdf'}
 FOOD_PDF_DEFAULT = 'Food%20Menu%20eng.pdf'
+
+
+def asset_version():
+    """Short content hash of css/js/locale assets, used for cache-busting.
+    The value changes only when one of these files changes, so browsers
+    refetch updated assets while still caching unchanged ones."""
+    h = hashlib.md5()
+    files = [os.path.join(ROOT, 'css', 'style.css')]
+    files += sorted(glob.glob(os.path.join(ROOT, 'js', '*.js')))
+    files += sorted(glob.glob(os.path.join(ROOT, 'locales', '*.js')))
+    for p in files:
+        with open(p, 'rb') as f:
+            h.update(f.read())
+    return h.hexdigest()[:8]
+
+
+# Append ?v=<hash> to local css/js/locale URLs (with or without ../ prefix).
+_ASSET_RE = re.compile(r'((?:\.\./)?(?:css|js|locales)/[A-Za-z0-9_.-]+\.(?:css|js))(?=["\'])')
+
+
+def bust(html, ver):
+    return _ASSET_RE.sub(lambda m: m.group(1) + '?v=' + ver, html)
 
 
 def switcher(current, page):
@@ -66,6 +90,7 @@ def main():
 
     items = gallery_items()
     n_items = items.count('class="gitem"')
+    ver = asset_version()
 
     for lang in LANGS:
         d = os.path.join(ROOT, lang)
@@ -79,7 +104,7 @@ def main():
                       .replace('%%FOODPDF%%', food)
                       .replace('%%SWITCHER%%', switcher(lang, 'index.html')))
         with open(os.path.join(d, 'index.html'), 'w', encoding='utf-8') as f:
-            f.write(index_html)
+            f.write(bust(index_html, ver))
 
         gallery_html = (gallery_tpl
                         .replace('%%LANG%%', lang)
@@ -87,11 +112,22 @@ def main():
                         .replace('%%SWITCHER%%', switcher(lang, 'gallery.html'))
                         .replace('%%GALLERY_ITEMS%%', items))
         with open(os.path.join(d, 'gallery.html'), 'w', encoding='utf-8') as f:
-            f.write(gallery_html)
+            f.write(bust(gallery_html, ver))
 
         print('generated {}/index.html + {}/gallery.html'.format(lang, lang))
 
+    # sorry.html is static (not a template); bust its asset URLs in place too.
+    sorry_path = os.path.join(ROOT, 'sorry.html')
+    with open(sorry_path, encoding='utf-8') as f:
+        sorry_html = f.read()
+    # Drop any previous ?v=... first, then re-append the current version.
+    sorry_html = re.sub(r'(/[A-Za-z0-9_.-]+\.(?:css|js))\?v=[0-9a-f]+', r'\1', sorry_html)
+    sorry_html = bust(sorry_html, ver)
+    with open(sorry_path, 'w', encoding='utf-8') as f:
+        f.write(sorry_html)
+
     print('gallery items per page:', n_items)
+    print('asset version:', ver)
 
 
 if __name__ == '__main__':
