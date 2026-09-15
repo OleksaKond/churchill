@@ -23,6 +23,7 @@ window.translations.ru = {
   'reservation.phone_placeholder': '+48 123 456 789',
   'reservation.date': 'Дата',
   'reservation.time': 'Время',
+  'reservation.time_placeholder': 'Выберите время',
   'reservation.guests': 'Количество гостей',
   'reservation.guests_placeholder': 'Минимум 6',
   'reservation.special_requests': 'Особые пожелания',

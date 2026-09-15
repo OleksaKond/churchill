@@ -23,6 +23,7 @@ window.translations.en = {
   'reservation.phone_placeholder': '+48 123 456 789',
   'reservation.date': 'Date',
   'reservation.time': 'Time',
+  'reservation.time_placeholder': 'Select time',
   'reservation.guests': 'Guests',
   'reservation.guests_placeholder': 'Min 6',
   'reservation.special_requests': 'Special Requests',

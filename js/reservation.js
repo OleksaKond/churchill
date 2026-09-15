@@ -11,6 +11,18 @@
   const btn = document.getElementById('reservation-submit');
   const statusEl = document.getElementById('reservation-status');
 
+  // Fill the time dropdown with 24-hour slots (00:00–23:30, every 30 min).
+  const timeSel = document.getElementById('reservation-time');
+  if (timeSel) {
+    for (let m = 0; m < 24 * 60; m += 30) {
+      const hh = String(Math.floor(m / 60)).padStart(2, '0');
+      const mm = String(m % 60).padStart(2, '0');
+      const opt = document.createElement('option');
+      opt.value = opt.textContent = hh + ':' + mm;
+      timeSel.appendChild(opt);
+    }
+  }
+
   function lang() {
     return document.documentElement.lang || 'en';
   }

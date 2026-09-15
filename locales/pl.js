@@ -23,6 +23,7 @@ window.translations.pl = {
   'reservation.phone_placeholder': '+48 123 456 789',
   'reservation.date': 'Data',
   'reservation.time': 'Godzina',
+  'reservation.time_placeholder': 'Wybierz godzinę',
   'reservation.guests': 'Liczba gości',
   'reservation.guests_placeholder': 'Min. 6',
   'reservation.special_requests': 'Specjalne życzenia',

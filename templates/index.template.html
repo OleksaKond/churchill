@@ -163,7 +163,9 @@
 </div>
 <div>
 <label class="block text-xs uppercase text-gray-500 font-bold mb-2" data-i18n="reservation.time">Time</label>
-<input name="time" required class="w-full bg-charcoal border-white/20 text-white focus:border-gold-accent focus:ring-0" type="time"/>
+<select name="time" id="reservation-time" required class="w-full bg-charcoal border-white/20 text-white focus:border-gold-accent focus:ring-0">
+<option value="" disabled selected data-i18n="reservation.time_placeholder">Select time</option>
+</select>
 </div>
 <div>
 <label class="block text-xs uppercase text-gray-500 font-bold mb-2" data-i18n="reservation.guests">Guests</label>

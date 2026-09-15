@@ -23,6 +23,7 @@ window.translations.ar = {
   'reservation.phone_placeholder': '+48 123 456 789',
   'reservation.date': 'التاريخ',
   'reservation.time': 'الوقت',
+  'reservation.time_placeholder': 'اختر الوقت',
   'reservation.guests': 'عدد الضيوف',
   'reservation.guests_placeholder': '6 على الأقل',
   'reservation.special_requests': 'طلبات خاصة',
