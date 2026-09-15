@@ -1,0 +1,14 @@
+name = "churchill-reservations"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+
+# The origin of your live website. Used for CORS so only your site can post.
+# GitHub Pages example shown — change if you use a custom domain.
+[vars]
+ALLOWED_ORIGIN = "https://oleksakond.github.io"
+
+# KV namespace holding pending reservations. Replace the id after you run:
+#   wrangler kv namespace create RESERVATIONS
+[[kv_namespaces]]
+binding = "RESERVATIONS"
+id = "e1a1507d19e24d7aa58c056983ee7df8"

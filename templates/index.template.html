@@ -143,29 +143,39 @@
 <div class="md:w-2/3 p-8 md:p-12">
 <h2 class="text-3xl font-serif text-gold-accent mb-2 uppercase tracking-wide" data-i18n="reservation.title">Big Parties &amp; VIP</h2>
 <p class="text-gray-400 mb-8 text-sm" data-i18n="reservation.subtitle">Planning a special event? Reserve our VIP booths for 6+ guests.</p>
-<form action="#" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<form id="reservation-form" class="grid grid-cols-1 md:grid-cols-2 gap-6" novalidate>
+<input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true"/>
 <div class="col-span-full">
 <label class="block text-xs uppercase text-gray-500 font-bold mb-2" data-i18n="reservation.full_name">Full Name</label>
-<input class="w-full bg-charcoal border-white/20 text-white focus:border-gold-accent focus:ring-0 placeholder:text-gray-700" data-i18n-placeholder="reservation.full_name_placeholder" placeholder="John Doe" type="text"/>
+<input name="name" required class="w-full bg-charcoal border-white/20 text-white focus:border-gold-accent focus:ring-0 placeholder:text-gray-700" data-i18n-placeholder="reservation.full_name_placeholder" placeholder="John Doe" type="text"/>
+</div>
+<div>
+<label class="block text-xs uppercase text-gray-500 font-bold mb-2" data-i18n="reservation.email">Email</label>
+<input name="email" required class="w-full bg-charcoal border-white/20 text-white focus:border-gold-accent focus:ring-0 placeholder:text-gray-700" data-i18n-placeholder="reservation.email_placeholder" placeholder="you@example.com" type="email"/>
+</div>
+<div>
+<label class="block text-xs uppercase text-gray-500 font-bold mb-2" data-i18n="reservation.phone">Phone</label>
+<input name="phone" required class="w-full bg-charcoal border-white/20 text-white focus:border-gold-accent focus:ring-0 placeholder:text-gray-700" data-i18n-placeholder="reservation.phone_placeholder" placeholder="+48 123 456 789" type="tel"/>
 </div>
 <div>
 <label class="block text-xs uppercase text-gray-500 font-bold mb-2" data-i18n="reservation.date">Date</label>
-<input class="w-full bg-charcoal border-white/20 text-white focus:border-gold-accent focus:ring-0" type="date"/>
+<input name="date" required class="w-full bg-charcoal border-white/20 text-white focus:border-gold-accent focus:ring-0" type="date"/>
 </div>
 <div>
 <label class="block text-xs uppercase text-gray-500 font-bold mb-2" data-i18n="reservation.time">Time</label>
-<input class="w-full bg-charcoal border-white/20 text-white focus:border-gold-accent focus:ring-0" type="time"/>
+<input name="time" required class="w-full bg-charcoal border-white/20 text-white focus:border-gold-accent focus:ring-0" type="time"/>
 </div>
 <div>
 <label class="block text-xs uppercase text-gray-500 font-bold mb-2" data-i18n="reservation.guests">Guests</label>
-<input class="w-full bg-charcoal border-white/20 text-white focus:border-gold-accent focus:ring-0" data-i18n-placeholder="reservation.guests_placeholder" min="6" placeholder="Min 6" type="number"/>
+<input name="guests" required class="w-full bg-charcoal border-white/20 text-white focus:border-gold-accent focus:ring-0" data-i18n-placeholder="reservation.guests_placeholder" min="6" placeholder="Min 6" type="number"/>
 </div>
 <div class="col-span-full">
 <label class="block text-xs uppercase text-gray-500 font-bold mb-2" data-i18n="reservation.special_requests">Special Requests</label>
-<textarea class="w-full bg-charcoal border-white/20 text-white focus:border-gold-accent focus:ring-0 placeholder:text-gray-700" data-i18n-placeholder="reservation.special_requests_placeholder" placeholder="Any dietary restrictions or seating preferences?" rows="3"></textarea>
+<textarea name="requests" class="w-full bg-charcoal border-white/20 text-white focus:border-gold-accent focus:ring-0 placeholder:text-gray-700" data-i18n-placeholder="reservation.special_requests_placeholder" placeholder="Any dietary restrictions or seating preferences?" rows="3"></textarea>
 </div>
 <div class="col-span-full">
-<button class="w-full bg-gold-accent text-smoke-black font-bold py-4 uppercase tracking-widest hover:bg-deep-amber transition-colors" data-i18n="reservation.submit" type="submit">Submit Reservation Request</button>
+<button id="reservation-submit" class="w-full bg-gold-accent text-smoke-black font-bold py-4 uppercase tracking-widest hover:bg-deep-amber transition-colors disabled:opacity-50 disabled:cursor-not-allowed" data-i18n="reservation.submit" type="submit">Submit Reservation Request</button>
+<p id="reservation-status" class="mt-4 text-sm text-center hidden" role="status" aria-live="polite"></p>
 </div>
 </form>
 </div>
@@ -277,4 +287,5 @@
 <script src="../js/i18n.js"></script>
 <script src="../js/age-gate.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/reservation.js"></script>
 </body></html>
