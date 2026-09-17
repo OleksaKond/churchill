@@ -25,7 +25,7 @@ window.translations.ru = {
   'reservation.time': 'Время',
   'reservation.time_placeholder': 'Выберите время',
   'reservation.guests': 'Количество гостей',
-  'reservation.guests_placeholder': 'Минимум 6',
+  'reservation.guests_placeholder': 'Минимум 1',
   'reservation.special_requests': 'Особые пожелания',
   'reservation.special_requests_placeholder': 'Есть ли диетические ограничения или пожелания по рассадке?',
   'reservation.submit': 'Отправить запрос на бронирование',

@@ -25,7 +25,7 @@ window.translations.en = {
   'reservation.time': 'Time',
   'reservation.time_placeholder': 'Select time',
   'reservation.guests': 'Guests',
-  'reservation.guests_placeholder': 'Min 6',
+  'reservation.guests_placeholder': 'Min 1',
   'reservation.special_requests': 'Special Requests',
   'reservation.special_requests_placeholder': 'Any dietary restrictions or seating preferences?',
   'reservation.submit': 'Submit Reservation Request',

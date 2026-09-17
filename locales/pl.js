@@ -25,7 +25,7 @@ window.translations.pl = {
   'reservation.time': 'Godzina',
   'reservation.time_placeholder': 'Wybierz godzinę',
   'reservation.guests': 'Liczba gości',
-  'reservation.guests_placeholder': 'Min. 6',
+  'reservation.guests_placeholder': 'Min. 1',
   'reservation.special_requests': 'Specjalne życzenia',
   'reservation.special_requests_placeholder': 'Ograniczenia dietetyczne lub preferencje dotyczące miejsc?',
   'reservation.submit': 'Wyślij prośbę o rezerwację',

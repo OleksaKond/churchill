@@ -25,7 +25,7 @@ window.translations.ar = {
   'reservation.time': 'الوقت',
   'reservation.time_placeholder': 'اختر الوقت',
   'reservation.guests': 'عدد الضيوف',
-  'reservation.guests_placeholder': '6 على الأقل',
+  'reservation.guests_placeholder': '1 على الأقل',
   'reservation.special_requests': 'طلبات خاصة',
   'reservation.special_requests_placeholder': 'هل لديك قيود غذائية أو تفضيلات للجلوس؟',
   'reservation.submit': 'إرسال طلب الحجز',
